@@ -25,59 +25,181 @@ global $Metadata;
 
 $Metadata = [
     array(
-        'name' => 'title',
-        'type' => 'fixed',
-        'table' => 'post',
-        'attr' => 'post_title',
+        'name' => 'Nº de registro',
+        'type' => 'text',
+        'cardinality' => '1'
     ),
     array(
-        'name' => 'Categorias',
+        'name' => 'Nº de registro (anterior)',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Data da entrada no Acervo',
+        'type' => 'date',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Procedência',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Modo de aquisição',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Modo de aquisição',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Doador',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Material',
         'type' => 'category'
     ),
     array(
-        'name' => 'ID',
-        'type' => 'fixed'
-    ),
-    array(
-        'name' => 'Nome dos arquivos',
-        'type' => 'fixed'
-    ),
-    array(
-        'name' => 'description',
-        'type' => 'fixed',
-        'table' => 'post',
-        'attr' => 'post_content'
-    ),
-    array(
-        'name' => 'content',
-        'type' => 'fixed',
-        'table' => 'meta',
-        'attr' => 'socialdb_object_content'
-    ),
-    array(
-        'name' => 'item_type',
-        'type' => 'fixed',
-        'table' => 'meta',
-        'attr' => 'socialdb_object_dc_type'
-    ),
-    array(
-        'name' => 'tags',
-        'type' => 'fixed',
-        'table' => 'tags'
-    ),
-    array(
-        'name' => 'Participantes',
+        'name' => 'Objeto/Denominação',
         'type' => 'text',
-        'cardinality' => 'n'
+        'cardinality' => '1'
     ),
     array(
-        'name' => 'Autores',
+        'name' => 'Descrição',
         'type' => 'text',
-        'cardinality' => 'n'
+        'cardinality' => '1'
     ),
     array(
-        'name' => 'Ano',
+        'name' => 'Nº de partes',
         'type' => 'numeric',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Estado de conservação',
+        'type' => 'category'
+    ),
+    array(
+        'name' => 'Datação',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Localização Atual',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Data da compilação da ficha',
+        'type' => 'date',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Largura',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Espessura',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Comprimento',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Largura – Zona proximal',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Largura – Zona mesial',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Largura – Zona distal',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Espessura',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Comprimento',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Comprimento – Feição',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Largura – Feição',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Profundidade – Feição',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Inclinação – Feição',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Largura – Bloco',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Espessura – Bloco',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Comprimento - Bloco',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Diâmetro',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Peso',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Matéria prima',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Processos Curatoriais',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Observações',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Equipe',
+        'type' => 'text',
         'cardinality' => '1'
     ),
     array(
@@ -86,26 +208,13 @@ $Metadata = [
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Edição',
-        'type' => 'category'
-    ),
-    array(
-        'name' => 'Editor',
+        'name' => 'Localização',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Idioma',
-        'type' => 'category'
-    ),
-    array(
-        'name' => 'Evento',
+        'name' => 'Projeto',
         'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Files',
-        'type' => 'attachment',
         'cardinality' => '1'
     )
 ];
