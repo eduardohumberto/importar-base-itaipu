@@ -95,15 +95,15 @@ class Main{
                 $ItemMetadata->insert_text_metadata( $item_id, $columnData['id'], trim( $value ), $index);
             endforeach;
 
-        } else if( $columnData['name'] === 'title' ){
+        } else if( $columnData['name'] === 'Nº de registro' ){
             $title = $rawValue;
             $ItemClass->update_item_title( $item_id, $title);
 
-        } else if( $columnData['name'] === 'description' ){
+        } else if( $columnData['name'] === 'Descrição' ){
             $ItemClass->update_item_description( $item_id, $rawValue );
 
         } else if( $columnData['name'] === 'item_type' ){
-            $ItemMetadata->insert_fixed_metadata( $item_id, 'socialdb_object_dc_type', $rawValue);
+
 
         } else if( $columnData['name'] === 'Nome dos arquivos' && $rawValue && !empty( trim( $rawValue ) )){
             $LogClass->printText( 'INSERINDO ARQUIVO: '. $rawValue );
@@ -117,18 +117,9 @@ class Main{
             if( !$content || $content === '') {
                 $ItemMetadata->insert_fixed_metadata( $item_id, 'socialdb_object_content', $rawValue );
                 $ItemMetadata->insert_fixed_metadata( $item_id, 'socialdb_object_from', 'external' );
-
-                if ( strpos( $rawValue, 'youtube.com') !== false ) {
-                    parse_str( parse_url( $rawValue, PHP_URL_QUERY), $vars);
-                    $file_id = $ItemFilesClass->insert_attachment_by_url( $item_id,'https://i.ytimg.com/vi/' . $vars['v'] . '/0.jpg');
-                    set_post_thumbnail( $item_id, $file_id );
-                }
             }
 
-        } else if( $columnData['name'] === 'tags' ){
-            $TagClass->insert_tag( $item_id, explode( ',', $rawValue ) );
-
-        } else if( $columnData['type'] === 'attachment' && $rawValue && !empty( trim( $rawValue ) )){
+        }  else if( $columnData['type'] === 'attachment' && $rawValue && !empty( trim( $rawValue ) )){
             $LogClass->printText( 'INSERINDO ANEXO: '. $rawValue );
             $files = explode( ',', $rawValue );
             foreach ( $files as $file ) {
@@ -138,5 +129,32 @@ class Main{
 
 
         return $item_id;
+    }
+
+    /**
+    * insert content and attachments
+    **/
+    public function insertImages( $item_id, $path){
+      global $ItemMetadata, $ItemClass, $ItemFilesClass, $TagClass, $LogClass;
+      $isFirst = true;
+
+      if( !is_dir($path) ){
+          return false;
+      }
+
+      $dir = new DirectoryIterator(dirname(__FILE__));
+      foreach ($dir as $fileinfo) {
+          if (!$fileinfo->isDot()) {
+              $LogClass->printText( 'INSERINDO ARQUIVO: '. $fileinfo->getFilename() );
+              $attachment_id = $ItemFilesClass->insert_attachment_by_path( $item_id, $this->contents . '/' .$rawValue );
+
+              if($isFirst){
+                $ItemMetadata->insert_fixed_metadata( $item_id, 'socialdb_object_content', $attachment_id);
+                $ItemMetadata->insert_fixed_metadata( $item_id, 'socialdb_object_from', 'internal' );
+                $ItemMetadata->insert_fixed_metadata( $item_id, 'socialdb_object_dc_type', 'image');
+                $isFirst = false;
+              }
+          }
+      }
     }
 }
