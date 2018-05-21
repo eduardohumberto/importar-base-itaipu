@@ -26,8 +26,9 @@ global $Metadata;
 $Metadata = [
     array(
         'name' => 'Nº de registro',
-        'type' => 'text',
-        'cardinality' => '1'
+        'type' => 'fixed',
+        'table' => 'post',
+        'attr' => 'post_title',
     ),
     array(
         'name' => 'Nº de registro (anterior)',
@@ -41,11 +42,6 @@ $Metadata = [
     ),
     array(
         'name' => 'Procedência',
-        'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Modo de aquisição',
         'type' => 'text',
         'cardinality' => '1'
     ),
@@ -70,8 +66,9 @@ $Metadata = [
     ),
     array(
         'name' => 'Descrição',
-        'type' => 'text',
-        'cardinality' => '1'
+        'type' => 'fixed',
+        'table' => 'post',
+        'attr' => 'post_content',
     ),
     array(
         'name' => 'Nº de partes',
@@ -94,98 +91,112 @@ $Metadata = [
     ),
     array(
         'name' => 'Data da compilação da ficha',
-        'type' => 'date',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Largura',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Espessura',
+        'name' => 'Largura (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Comprimento',
+        'name' => 'Espessura (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Largura – Zona proximal',
+        'name' => 'Comprimento (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Largura – Zona mesial',
+        'name' => 'Largura – Zona proximal (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Largura – Zona distal',
+        'name' => 'Largura – Zona mesial (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Espessura',
+        'name' => 'Largura – Zona distal (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Comprimento',
+        'name' => 'Espessura (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Comprimento – Feição',
+        'name' => 'Comprimento (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Largura – Feição',
+        'name' => 'Comprimento – Feição (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Profundidade – Feição',
+        'name' => 'Largura – Feição (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Inclinação – Feição',
+        'name' => 'Profundidade – Feição (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Largura – Bloco',
+        'name' => 'Inclinação – Feição (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Espessura – Bloco',
+        'name' => 'Largura – Bloco (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Comprimento - Bloco',
+        'name' => 'Espessura – Bloco (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Diâmetro',
+        'name' => 'Comprimento - Bloco (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Peso',
+        'name' => 'Diâmetro (cm)',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Diâmetro/comprimento da boca (cm)',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Diâmetro/medida do ombro (cm)',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Altura (cm)',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Peso (g)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
         'name' => 'Matéria prima',
-        'type' => 'text',
-        'cardinality' => '1'
+        'type' => 'category'
     ),
     array(
         'name' => 'Processos Curatoriais',
@@ -204,7 +215,7 @@ $Metadata = [
     ),
     array(
         'name' => 'Data',
-        'type' => 'date',
+        'type' => 'text',
         'cardinality' => '1'
     ),
     array(
@@ -216,6 +227,20 @@ $Metadata = [
         'name' => 'Projeto',
         'type' => 'text',
         'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Inventário',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Classe Thesauros',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Situação',
+        'type' => 'category'
     )
 ];
 
