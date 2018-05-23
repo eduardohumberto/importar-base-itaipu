@@ -33,7 +33,7 @@ class ItemFiles{
         $file_array['name'] = basename($filename);
         $file_array['tmp_name'] = $tmp;
 
-        $attach_id = media_handle_sideload($file_array, $item_id);
+        $attach_id = @media_handle_sideload($file_array, $item_id);
 
         delete_post_meta($item_id, '_file_id');
         add_post_meta($item_id, '_file_id', $attach_id);

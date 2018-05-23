@@ -1,7 +1,7 @@
 <?php
 
-define('CATEGORY_ROOT_ID',112);
-define('COLLECTION_ID',33);
+define('CATEGORY_ROOT_ID', 2204);
+define('COLLECTION_ID',2612);
 define('AUTHOR',1);
 
 define( 'WP_USE_THEMES', false);
