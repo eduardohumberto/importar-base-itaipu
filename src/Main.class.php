@@ -125,6 +125,7 @@ class Main{
               $attachment_id = $ItemFilesClass->insert_attachment_by_path( $item_id, $fileinfo->getPathname() );
 
               if($isFirst){
+                set_post_thumbnail( $item_id, $attachment_id );
                 $ItemMetadata->insert_fixed_metadata( $item_id, 'socialdb_object_content', $attachment_id);
                 $ItemMetadata->insert_fixed_metadata( $item_id, 'socialdb_object_from', 'internal' );
                 $ItemMetadata->insert_fixed_metadata( $item_id, 'socialdb_object_dc_type', 'image');
