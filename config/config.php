@@ -95,17 +95,17 @@ $Metadata = [
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Largura (cm)',
+        'name' => 'Largura – Proximal (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Espessura (cm)',
+        'name' => 'Largura – Mesial (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Comprimento (cm)',
+        'name' => 'Largura – Distal (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
@@ -125,52 +125,7 @@ $Metadata = [
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Espessura (cm)',
-        'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Comprimento (cm)',
-        'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Comprimento – Feição (cm)',
-        'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Largura – Feição (cm)',
-        'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Profundidade – Feição (cm)',
-        'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Inclinação – Feição (cm)',
-        'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Largura – Bloco (cm)',
-        'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Espessura – Bloco (cm)',
-        'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Comprimento - Bloco (cm)',
-        'type' => 'text',
-        'cardinality' => '1'
-    ),
-    array(
-        'name' => 'Diâmetro (cm)',
+        'name' => 'Altura (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
@@ -185,7 +140,27 @@ $Metadata = [
         'cardinality' => '1'
     ),
     array(
-        'name' => 'Altura (cm)',
+        'name' => 'Diâmetro/comprimento da base (cm)',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Largura (cm)',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Espessura (cm)',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Comprimento (cm)',
+        'type' => 'text',
+        'cardinality' => '1'
+    ),
+    array(
+        'name' => 'Diâmetro (cm)',
         'type' => 'text',
         'cardinality' => '1'
     ),
