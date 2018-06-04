@@ -90,10 +90,10 @@ class Main{
 
         } else if( in_array( $columnData['type'], ['text', 'numeric', 'date', 'textarea'])){
 
-            $values = explode(',', $rawValue );
-            foreach ( $values as $index => $value ):
-                $ItemMetadata->insert_text_metadata( $item_id, $columnData['id'], trim( $value ), $index);
-            endforeach;
+            // $values = explode(',', $rawValue );
+            // foreach ( $values as $index => $value ):
+                $ItemMetadata->insert_text_metadata( $item_id, $columnData['id'], trim( $rawValue ), $index);
+            // endforeach;
 
         } else if( $columnData['name'] === 'Nº de registro' ){
             $title = $rawValue;
